@@ -1,0 +1,27 @@
+//Определить, есть ли в десятичной записи числа N цифра 3.
+
+#include <iostream>
+using namespace std;
+
+int main() {
+
+int n, a, s;
+
+n=3245;
+s=0;
+
+while(n>0) {
+a=n%10;
+if(a==3){s=1;}
+n=n/10;
+}
+
+if(s==1){
+cout << "da" << endl;
+}
+
+else{
+cout << "net" << endl;
+}
+
+}

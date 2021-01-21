@@ -1,0 +1,33 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main() {
+
+float a, b, c, d, n;
+
+
+cin >> a;
+cin >> b;
+cin >> c;
+cin >> d;
+
+
+n = c - a;
+
+if (n < 0) {
+  n = 0 - n;
+}
+
+b = b+n;
+
+
+if (b == d) {
+  cout << "urozjaet" << endl;
+}
+
+else {
+  cout << "ne urozjaet" << endl;
+}
+
+}

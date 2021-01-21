@@ -1,0 +1,48 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+
+int main() {
+int a,b,p,a1,b1,m1,a2,b2;
+a=10;
+b=10;
+int m[a][b]={};
+
+//srand(time(NULL));
+
+for(int i=0; i<a; i++){
+	for(int j=0; j<b; j++){
+		m[i][j]=rand()%11;
+	}
+}
+
+cout<<"viberite pervij element massiva"<<endl;
+cin>>a1;
+cin>>b1;
+cout<<"viberite vtoroj element massiva"<<endl;
+cin>>a2;
+cin>>b2;
+
+m1=m[a1][b1];
+m[a1][b1]=m[a2][b2];
+m[a2][b2]=m1;
+
+
+for(int i=0; i<a; i++){
+	for(int j=0; j<b; j++){
+		if(j==b-1){
+			cout<<m[i][j]<<endl;
+		}
+		else{
+			if(m[i][j]/10!=0){
+				cout<<m[i][j]<<"  ";
+			}
+			else{
+				cout<<m[i][j]<<"   ";
+			}
+		}
+	}
+}
+
+}

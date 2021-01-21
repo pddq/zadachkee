@@ -1,0 +1,43 @@
+/*Заполнить массив тридцатью первыми простыми числами. Результат
+вывести на экран.*/
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main() {
+
+int n=1;
+float n_1;
+int k = 0;
+int l = 0;
+int ll = 1;
+int j = j-1;
+
+j=30;
+int m[j] = {};
+
+while (n>0) {
+
+  for(int i=1; i<=n; i++){
+    n_1=n%i;
+    if(n_1==0){
+      k++;
+    }
+  }
+
+  if(k==2){
+    m[l]=n;
+    cout<<ll<<" "<<m[l]<<endl;  
+    l++;
+    ll++;
+  }
+
+  k=0;
+  if(l>=30){
+    break;
+  }
+  n++;
+
+  }
+}

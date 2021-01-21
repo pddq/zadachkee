@@ -1,0 +1,20 @@
+/*Дана последовательность символов.
+латинского алфавита в большие./*
+
+
+#include <locale>
+#include <iostream>
+using namespace std;
+int main() {
+locale::global(locale(""));
+int i = 0;
+wstring ws = L"Жопа";
+int b = L'а'-L'А';
+while(ws[i]!='\0'){
+	if((int)ws[i]>=(int)L'а'){
+		ws[i] = ws[i]-b;
+	}
+	i++;
+} 
+wcout<<ws<<endl;
+}

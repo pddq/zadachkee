@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+  int grad, h, m, grad_h, chislo_chtobi_perevesti_chislo_v_minuti;
+
+  cout << "Vvedite gradusi" <<endl;
+  cin >> grad;
+
+  if (grad < 0 || grad > 360) {
+    cout << "Vsyo nepravilno" <<endl;
+  }
+
+  else {
+    grad_h = 30;
+    chislo_chtobi_perevesti_chislo_v_minuti = 2;
+    h = grad/grad_h;
+    m = grad%grad_h;
+    cout << h << " chasov" << endl;
+    cout << m * chislo_chtobi_perevesti_chislo_v_minuti << " minut" << endl;
+  }
+
+}

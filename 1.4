@@ -1,0 +1,16 @@
+/*Написать программу, определяющую скорость пешехода, который за 3 часа
+прошел 8000 метров (ни какие вычисления в уме выполнять нельзя).*/
+
+#include <iostream>
+using namespace std;
+ 
+int main() { 
+  int s = 8000;
+  int t = 3;
+
+  const float metr_v_kilometre = 1000;
+  const float sekund_v_chase = 3600;
+
+  printf("%f m/s \n", s/(t*sekund_v_chase));
+  printf("%f km/h \n", (s/metr_v_kilometre)/t);
+}

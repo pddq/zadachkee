@@ -1,0 +1,23 @@
+/*Дана последовательность слов. Проверить, правильно ли в ней записаны
+сочетания "ча" и "ща". Исправить ошибки.*/
+
+#include <iostream>
+#include <locale>
+#include <string>
+using namespace std;
+int main() {
+locale::global(locale(""));
+int i = 0;
+wstring s = L"я люблю писять в чяй";
+wcout<<s<<endl;
+
+while(s[i]!='\0'){
+	if((s[i]==L'ч' || s[i]==L'щ') && (s[i+1]==L'я')){
+		s[i+1]=L'а';
+	}
+	i++; 
+} 
+
+wcout<<L"Исправлено: "<<endl;
+wcout<<s<<endl;
+}

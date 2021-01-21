@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+  int grad, h, m, grad_h, delenie_minuti, delenie_minuti_gradusi;
+
+  cout << "Vvedite gradusi" <<endl;
+  cin >> grad;
+
+  grad_h = 30;
+  delenie_minuti = 2;
+  delenie_minuti_gradusi = 6;
+  h = grad/grad_h;
+  m = grad%grad_h*delenie_minuti;
+
+  cout << m * delenie_minuti_gradusi << " gradusov minut" << endl;
+  cout << h << " chasov" << endl;
+  cout << m << " minut" << endl;
+}

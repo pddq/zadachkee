@@ -1,0 +1,50 @@
+/*Дан двухмерный массив 5х5. Определить:
+а) среднее арифметическое элементов главной диагонали;
+б) среднее арифметическое элементов побочной диагонали.*/
+
+#include <iostream>
+using namespace std;
+
+int main() {
+setlocale(LC_ALL, "Russian");
+
+int n, k, sum_main_d, sum_side_d, q1, q2;
+float a1, a2;
+n = 5;
+sum_main_d = 0;
+sum_side_d = 0;
+q1 = 0;
+q2 = 0;
+
+
+int m[n][n] = {};
+
+for(int i = 0; i<n; i++){
+	for(int j = 0; j<n; j++){
+		m[i][j] = rand()%10;
+		if(j==i){
+			sum_main_d=sum_main_d + m[i][j];
+			q1 = q1 + 1;
+		}
+		if(j==n-1-i){
+			sum_side_d=sum_side_d + m[i][j];
+			q2 = q2 + 1;
+		}
+		if(j==n-1){
+			cout << m[i][j] <<endl;
+		}
+		else {
+			cout << m[i][j] <<" ";
+		}
+	}
+
+}
+
+a1 = sum_main_d/q1;
+a2 = sum_side_d/q2;
+
+cout<<"Среднее арифметическое элементов главной диагонали массива: "<<a1<<endl;
+cout<<"Среднее арифметическое элементов побочной диагонали массива: "<<a2<<endl;
+
+
+}

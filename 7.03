@@ -1,0 +1,22 @@
+//Составить программу печати всех простых чисел до 500.
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main() {
+  int x, n;
+
+  for (int i = 2; i <= 500; i++) {
+    n=0;
+    for (int j = 1; j <= i; j++) {
+      if(i%j==0){
+        n++;
+      }
+    }
+    x=n;
+    if(x<=2){
+      cout<<i<<endl;
+    }
+  }
+}

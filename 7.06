@@ -1,0 +1,16 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main() {
+  float x, n, m, s, sn;
+  cin >> n;
+  x=2;
+  s=0;
+  sn=0;
+  for (int i = 1; i <= n; i++) {
+    sn = sn + sin(i);
+    s=s+(1/sn);
+  }
+  cout<<s<<endl;
+}

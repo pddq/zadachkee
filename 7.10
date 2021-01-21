@@ -1,0 +1,27 @@
+//Дано натуральное N. Написать программу вычисления N первых элементов последовательности Фибоначчи.
+
+#include <iostream>
+using namespace std;
+
+int main() {
+  int n, f0, f1, fn;
+  cin >> n;
+
+  f1 = 1;
+  f0 = 0;
+
+  if(n==1){
+    cout << f1 << endl;
+  }
+
+  else {
+    n=n-1;
+	  for (int i = 1; i <= n; i++) {
+	    fn = f0 + f1;
+	    f0 = f1;
+	    f1 = fn;
+  	}
+    cout << fn << endl;
+  }
+}
+

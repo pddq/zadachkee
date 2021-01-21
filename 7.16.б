@@ -1,0 +1,27 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main() {
+  int n, nn, jj, nk, n_1;
+  n=123;
+  jj=1;
+  nn=0;
+  nk=n;
+
+
+  for (int i = 1; i>0; i++) {
+    n_1=nk%10;
+    nk=nk/10;
+    jj=jj*10;
+    nn=nn+n_1*jj;
+
+  	if(nk==0){
+  	  jj=jj*20;
+  	  nn=nn+2+jj;
+  	  cout<<nn<<endl; 
+  	  break;
+  	}
+  }
+
+}

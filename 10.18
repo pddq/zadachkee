@@ -1,0 +1,37 @@
+/*Дано предложение. Написать программу, вычисляющую длину самого
+короткого слова в нем.*/
+
+#include <iostream>
+#include <locale>
+#include <string>
+using namespace std;
+int main() {
+locale::global(locale(""));
+int i, j, num, k, min;
+i = j = min = num = 0;
+int m[12] = {};
+wstring s = L"люблю писять  в чяй";
+wcout<<s<<endl;
+
+while(s[i]!='\0'){
+	if(s[i]==' '){
+		num=0;  
+		if(i!=0 && s[i-1]!=' '){ //чтоб лишние пробелы не засчитывал
+		j++;}
+	}
+	else{
+		num++; //считает буковки в слове
+		m[j]=num;
+	}
+	i++; 
+} 
+
+min=m[0];
+for(int l = 0; l<=j; l++){
+	if(m[l]<min){
+		min=m[l];
+	}
+}
+
+wcout<<L"Длина самого короткого слова: "<<min<<endl;
+}

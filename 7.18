@@ -1,0 +1,26 @@
+//Дано натуральное число N. Определить сумму m его последних цифр.
+
+#include <iostream>
+using namespace std;
+
+int main() {
+
+
+int n, m, a, s;
+m=3;
+n=12345;
+s=0;
+
+
+for (int i=1; i<=m; i++) {
+
+	if(i!=1){n=n/10;}
+
+a=n%10;
+s=s+a;
+cout << s << endl;
+
+}
+
+
+}

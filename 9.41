@@ -1,0 +1,96 @@
+/*Получить прямоугольную матрицу А из натуральных чисел путем
+заполнения прямоугольника по сходящейся спирали от верхнего левого
+угла по часовой стрелке.*/
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+setlocale(LC_ALL, "Russian");
+
+int n, l, s, i, j, b, p, nn, ll, k, kk, ll0, nn0;
+
+s=0;
+n=4;
+l=5;
+nn0=i=0;
+ll0=j=0;
+b=n*l;
+p=0;
+nn=n;
+ll=l;
+k=0;
+kk=0;
+
+int m[n][l] = {};
+
+
+while(p<b){
+	m[i][j]=p;
+	cout<<"m["<<i<<"]"<<"["<<j<<"]"<<endl;
+	p++; 
+	
+	if(s==0 && k==1){
+		if(j==ll0){
+			s=1;
+			k=0;
+			ll0++;
+		}
+		else{
+			j--;
+		}
+		
+	}
+	if(s==1 && kk==1){
+		if(i==nn0+1){
+			s=0;
+			kk=0;
+			nn0++;
+		}
+		else{
+			i--;
+		}
+			
+	}
+	if(s==0 && k==0){
+		if(j==ll-1){
+			s=1;
+			k=1;
+			ll--;
+		}
+		else{
+			j++;
+		}
+		
+	}
+	
+	if(s==1 && kk==0){
+		i++;
+		if(i==nn-1){
+			s=0;
+			kk=1;
+			nn--;
+		}
+		
+			
+	}
+	
+}
+
+
+for(int i = 0; i<n; i++){
+	for(int j = 0; j<l; j++){
+		if(j==l-1){
+			cout << m[i][j] <<endl;
+		}
+		else {
+			cout << m[i][j] <<" ";
+		}
+	}
+}
+
+
+
+
+}

@@ -1,0 +1,24 @@
+/*В одномерном числовом массиве имеются только два одинаковых элемента.
+Найдите их.*/
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main() {
+int k, a;
+k=7;
+
+int m[k] = {40,41,50,48,82,48,76};
+
+for(int i=0; i<k; i++){
+  for(int j=0; j<k; j++){
+    if(i!=j){
+      if(m[i]==m[j]){
+        a=m[i];
+      }
+    }
+  }
+}
+cout<<a<<endl;
+}

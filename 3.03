@@ -1,0 +1,18 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+ 
+int main()
+{
+  float m, V;
+
+  cout << "Vvedite znachenie m" <<endl;
+  cin >> m;
+  cout << "Vvedite znachenie V" <<endl;
+  cin >> V;
+
+  float p = m/V;
+
+  cout << "p = "<< p<< "\n";
+
+}

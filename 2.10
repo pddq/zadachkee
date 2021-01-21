@@ -1,0 +1,10 @@
+#include <iostream>
+using namespace std;
+ 
+int main() {
+  int a = 78543;
+  int b = a/100;
+  int d = b%10;
+  cout << d <<endl;
+}
+

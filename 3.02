@@ -1,0 +1,9 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+ 
+int main()
+{
+  float a = 4+sqrt(3)-2;
+  cout << (a/5)+(pow(8,2)+a)/a <<endl;
+}

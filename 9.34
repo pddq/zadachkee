@@ -1,0 +1,71 @@
+/*Дана квадратная матрица целых чисел. Вставить в нее новый столбец
+правее столбца с номером k (k вводится с клавиатуры, элементы нового
+столбца задаются случайным образом).*/
+
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+
+int main() {
+setlocale(LC_ALL, "Russian");
+
+int n, k, l;
+l = n = 4;
+cin>>k;
+
+int m[n][l*2] = {{0,2,4,3},{2,3,3,0},{3,9,4,3},{4,2,3,5}};
+int m1[n] = {};
+int m2[n][l*2-(k+1)] = {};
+
+for(int i = 0; i<n; i++){
+	m1[i]=rand()%10;
+}
+
+for(int i = 0; i<n; i++){
+	for(int j = 0; j<l; j++){
+		if(j==l-1){
+			cout << m[i][j] <<endl;
+		}
+		else {
+			cout << m[i][j] <<" ";
+		}
+	}
+}
+
+
+
+
+for(int i = 0; i<n; i++){
+	for(int j = k+1, jj = 0; j<l, jj<l-(k+1); jj++, j++){  //записываю в массив m2 циферки после столбца k
+		m2[i][jj]=m[i][j];
+	}
+}
+
+for(int i = 0; i<n; i++){
+	for(int j = k+1; j<k+2; j++){	//записываю в массив m в столбец, который после k, новый столбец m2
+		m[i][j]=m1[i];	
+	}
+}
+l = l + 1;
+
+if(k!=l-2){
+for(int i = 0; i<n; i++){
+	for(int j = k+2, jj = 0; j<l, jj<l-(k+1); jj++, j++){
+		m[i][j] = m2[i][jj];
+	}
+}
+}
+
+cout<<endl;
+for(int i = 0; i<n; i++){
+	for(int j = 0; j<l; j++){
+		if(j==l-1){
+			cout << m[i][j] <<endl;
+		}
+		else {
+			cout << m[i][j] <<" ";
+		}
+	}
+}
+
+}

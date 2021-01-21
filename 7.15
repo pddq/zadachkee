@@ -1,0 +1,37 @@
+/*Дано натуральное число N. Определить: количество цифр в нем; среднее
+арифметическое его цифр; сумму квадратов его цифр; сумму его первой и
+последней цифр.*/
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main() {
+  int s, ss, sum, sumsqrt, s1, sn, sum_s1sn;
+  s=123;
+  sum=0;
+  sumsqrt=0;
+
+  for (int i = 1; i>0; i++) {
+    ss=s%10;
+    if(i==1){
+      s1=ss;
+    }
+    s=s/10;
+    sum = sum + ss;
+    sumsqrt=pow(ss,2)+sumsqrt;
+
+    if(s==0){
+      sn=ss;
+      sum_s1sn=sn+s1;
+      cout<<"summa pervoi i poslednei cifr: "<<sum_s1sn<<endl; 
+      cout<<"kol-vo cifr: "<<i<<endl; 
+      sum=sum/i;
+      cout<<"srednee arifm cifr: "<<sum<<endl; 
+      cout<<"summa kvadratov cifr: "<<sumsqrt<<endl; 
+      break;
+    }
+
+  }
+
+}

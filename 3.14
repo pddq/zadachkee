@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+  int a, a_3, a_2, a_1, a_4;
+  cin >> a;
+  
+  if (a<999){
+    cout <<"vvedite grugoe chislo"<<endl;
+  }
+
+  else {
+    a_1 = a/1000%10;
+    a_2 = a/100%10;
+    a_3 = a/10%10;
+    a_4 = a%10;
+    cout<<a_1<< " tysyach" <<endl;
+    cout<<a_2<< " soten" <<endl;
+    cout<<a_3<< " desyatkov" <<endl;
+    cout<<a_4<< " editits" <<endl;
+  }
+}

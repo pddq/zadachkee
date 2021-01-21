@@ -1,0 +1,26 @@
+/*Заполнить массив
+двадцатью первыми натуральными числами,
+делящимися нацело на 13 или на 17 и большими 200. Результат вывести на
+экран.*/
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main() {
+float a, b;
+int i, k;
+int j = 21;
+k=1;
+int m[j]={};
+
+
+for(i = 0; i<j; i++){
+  if(k%13==0 && k>200 && k%17==0){
+    m[i]=k;
+    cout<<m[i]<<endl;}
+  else{i=i-1;}
+k++;
+}
+
+}

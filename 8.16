@@ -1,0 +1,38 @@
+/*Одномерный числовой массив отсортировать по возрастанию методом «пузырька».*/
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main() {
+int j, i1, a, i, s;
+i=0;
+j=7;
+i1=1;
+s=0;
+int m[j] = {40,41,50,48,82,60,76};
+
+
+while(i>=0){
+	if(m[i1]<m[i]){
+		a=m[i];
+		m[i]=m[i1];
+		m[i1]=a;
+		s=1;
+	}
+	i++;
+	i1++;
+	if(i1>6){
+		i=0; 
+		i1=1;
+		if(s==0){
+			break;
+		}
+	s=0;
+	}
+}
+
+for(int k=0; k<j; k++){
+	cout<<m[k]<<endl;
+}
+}

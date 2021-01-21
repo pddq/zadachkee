@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+
+
+int n, a, n_1, i;
+n=1052351;
+n_1=0;
+i=1;
+
+while(n>0){
+
+  a=n%10;
+  if(a!=0 && a!=5){
+    n_1=n_1+a*i;
+    i=i*10;
+  }
+
+  n=n/10;
+
+}
+
+cout<<n_1<<endl;
+
+}

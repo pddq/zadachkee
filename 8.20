@@ -1,0 +1,24 @@
+/*Дан массив из четного числа элементов. Поменять местами его половины.*/
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main() {
+int k, j, k1, k2, a;
+k=6;
+
+
+int m[k] = {40,41,48,42,67,65};
+k1=(k/2);
+
+for(int i=0; i<k1; i++){
+j=i+k1;
+a=m[j];
+m[j]=m[i];
+m[i]=a;
+}
+
+for(int i=0; i<k; i++){
+cout<<m[i]<<endl;
+}}

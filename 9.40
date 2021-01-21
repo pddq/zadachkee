@@ -1,0 +1,82 @@
+/*Дана квадратная матрица целых чисел. Удалить все строки, в которых
+больше половины элементов являются нулями (дополнительный массив не
+использовать).*/
+
+#include <iostream>
+using namespace std;
+
+int main() {
+setlocale(LC_ALL, "Russian");
+
+int n, l, s, k;
+s=0;
+n=4;
+l=4;
+k=0;
+
+
+int m[n][l] = {{9,0,0,0},{4,0,0,0},{9,0,0,4},{1,0,0,0}};
+for(int i = 0; i<n; i++){
+	for(int j = 0; j<l; j++){
+		
+		if(j==n-1){
+			cout << m[i][j] <<endl;
+		}
+		else {
+			cout << m[i][j] <<" ";
+		}
+	}
+}
+
+while(k==0){  //здесь удаляю последнюю строку с нулями
+	for(int i = n-1; i<n; i++){
+		for(int j = 0; j<l; j++){
+			if(m[i][j]==0){
+				s++;
+			}
+		}
+		if(s>l/2){
+			n=n-1;
+			i=n-1;
+		}
+		else{
+			k=1;
+		}
+		s=0;
+	}
+}
+
+
+for(int i = 0; i<n; i++){  //а здесь удаляю все остальные нули
+	for(int j = 0; j<l; j++){
+		if(m[i][j]==0){
+			s++;
+		}
+	}
+	if(s>l/2){
+		n=n-1;
+		for(int u=i; u<n; u++){
+			for(int j = 0; j<l; j++){
+				m[u][j]=m[u+1][j];
+			}
+		}
+		i=i-1;
+	}
+	
+	s=0;
+}
+
+cout<<endl;
+
+for(int i=0; i<n; i++){
+	for(int j=0;j<l;j++){
+		if(j==l-1){
+			cout << m[i][j] <<endl;
+		}
+		else {
+			cout << m[i][j] <<" ";
+		}
+	}
+}
+
+}

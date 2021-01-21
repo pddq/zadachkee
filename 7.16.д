@@ -1,0 +1,52 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main() {
+int n, a, nn, jj, nk, n_1, a_1, n_2, i1;
+n=112;
+a=2;
+jj=1;
+nn=0;
+nk=n;
+a_1=0;
+
+
+for (int i = 1; i>0; i++) {
+n_1=nk%10; 
+
+if(n_1==a){  
+nk=(nk-n_1)/10;
+
+n_2=nk%10;
+	if(n_2!=a){
+	cout<<nk<<endl;
+	break;
+	}
+}
+else {break;}
+i1=nk;
+}
+
+for (int i = 1; i>0; i++) {
+n_1=nk%10; 
+a_1=a_1+n_1*jj;  
+
+if(n_1==a){ 
+nk=nk-n_1; 
+a_1=a_1-(a_1/jj)*jj; 
+nk=nk+a_1;
+cout<<nk<<endl; 
+
+}
+
+jj=jj*10;
+nk=nk/10;
+
+if(nk==0){
+
+break;
+}
+}
+
+}

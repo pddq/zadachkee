@@ -1,0 +1,11 @@
+#include <iostream>
+using namespace std;
+ 
+int main()  { 
+  int babushka = 1;
+  int yabloki = 45;
+  int vnuki = 6;
+  int yabloki_dlya_vnukov = yabloki/vnuki;
+  int dlya_babushki_bez_mod = yabloki - yabloki_dlya_vnukov*vnuki;
+  cout << dlya_babushki_bez_mod << " yablok dlya babushki"<<endl;
+}

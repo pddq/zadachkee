@@ -1,0 +1,62 @@
+/*Треугольник задан координатами своих вершин. Дана точка с координатами(x,y). 
+Определить, лежит точка внутри треугольника, или снаружи.*/
+
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main() {
+
+  float Ax, Ay, Bx, By, Cx, Cy, Nx, Ny, Mx, My, a1, a2, a3, S, AMCN, AMBN, CMBN;
+
+
+  cin >> Ax;
+  cin >> Ay;
+  cin >> Bx;
+  cin >> By;
+  cin >> Cx;
+  cin >> Cy;
+
+  cin >> Nx;
+  cin >> Ny;
+
+  Mx = (Ax + Bx + Cx)/3;
+  My = (Ay + By + Cy)/3;
+
+  S = 0.5*((Ax-Cx)*(By-Cy)-(Bx-Cx)*(Ay-Cy));
+
+  if (S < 0) {
+   S = 0 - S;
+  }
+
+  S = S/3;
+
+  AMCN = 0.5*(Ax*My+Mx*Cy+Cx*Ny+Nx+Ay-Ay*Mx-My*Cx-Cy*Nx-Ny+Ax);
+  if (AMCN < 0) {
+   AMCN = 0 - AMCN;
+  }
+
+  AMBN = 0.5*(Ax*My+Mx*By+Bx*Ny+Nx+Ay-Ay*Mx-My*Bx-By*Nx-Ny+Ax);
+  if (AMBN < 0) {
+    AMBN = 0 - AMBN;
+  }
+
+  CMBN = 0.5*(Cx*My+Mx*By+Bx*Ny+Nx+Cy-Cy*Mx-My*Bx-By*Nx-Ny+Cx);
+  if (CMBN < 0) {
+    CMBN = 0 - CMBN;
+  }
+
+  a1 = S - AMCN;
+  a2 = S - AMBN;
+  a3 = S - CMBN;
+
+  if (a1 >= 0 || a2 >= 0 || a3 >= 0) {
+   cout << "popadaet" << endl;
+  }
+
+  else {
+   cout << "ne popadaet" << endl;
+  }
+
+}

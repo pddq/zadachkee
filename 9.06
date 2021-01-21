@@ -1,0 +1,32 @@
+/*Дан двухмерный массив целых чисел 3х3. Определить произведение
+ненулевых элементов массива.*/
+
+#include <iostream>
+using namespace std;
+
+int main() {
+
+int k, prd;
+k = 3;
+prd = 1;
+
+int m[k][k] = {{1,0,2},{1,2,1},{0,1,3}};
+
+for(int i = 0; i<k; i++){
+	for(int j = 0; j<k; j++){
+		if(m[i][j]!=0){
+			prd = prd * m[i][j];
+		}
+		if(j==k-1){
+			cout << m[i][j] << endl;
+		}
+		else {
+			cout << m[i][j]<<" ";
+		}
+	}
+
+}
+
+cout<<prd<<endl;
+
+}

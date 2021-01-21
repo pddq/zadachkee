@@ -1,0 +1,28 @@
+/*Даны вещественные положительные числа а, b, с, R. Выяснить, пройдет ли кирпич с ребрами а,b,с в круглое отверстие радиуса R.*/
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main() {
+
+  int a, b, c, ab, ac, bc, R;
+
+  cin >> a;
+  cin >> b;
+  cin >> c;
+
+  cin >> R;
+
+  ab = sqrt(pow(a,2)+pow(b,2));
+  ac = sqrt(pow(a,2)+pow(c,2));
+  bc = sqrt(pow(c,2)+pow(b,2));
+
+  if (ab <= R || ac <= R || bc <= R) {
+    cout << "+" << endl;
+  }
+
+  else {
+    cout << "-" << endl;
+  }
+}

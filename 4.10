@@ -1,0 +1,33 @@
+/*Дано двузначное число. Определить:
+а) входит ли в него цифра 3;
+б) входит ли в него цифра a.*/
+
+#include <iostream>
+using namespace std;
+
+int main() {
+
+int a, a_1, a_2, b;
+
+cin >> a;
+cin >> b;
+
+a_2 = a%10;
+a_1 = a/10%10;
+
+
+if (a_2==3 || a_1==3) {
+  cout << "vhodit tsifra 3" << endl;
+}
+else { 
+  cout << "ne vhodit tsifra 3" <<endl;
+}
+
+if (a_2==b || a_1==b) {
+  cout << "vhodit tsifra "<< b << endl;
+}
+
+else { 
+  cout << "ne vhodit tsifra "<< b << endl;
+}
+}

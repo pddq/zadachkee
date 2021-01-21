@@ -1,0 +1,47 @@
+/*Определить, имеются ли в двухмерном массиве два одинаковых элемента.*/
+
+#include <iostream>
+using namespace std;
+
+int main() {
+setlocale(LC_ALL, "Russian");
+
+int n, k, p;
+n = 3;
+k = 0;
+p = 0;
+int m[n][n] = {{0,2,3},{5,6,7},{3,9,8}};
+int m1[n*n] = {};
+
+for(int i = 0; i<n; i++){
+	for(int j = 0; j<n; j++){
+		m1[p]=m[i][j];   //записываю в одномерный массив, шоб проще было сравниватью
+		p++;
+		if(j==n-1){
+			cout << m[i][j] <<endl;
+		}
+		else {
+			cout << m[i][j] <<" ";
+		}
+	}
+
+}
+
+
+for(int i = 0; i<n*n; i++){
+	for(int j = i+1; j<n*n; j++){
+		if(m1[i]==m1[j]){
+			k = 1;   //циферка 1, когда элементы одинаковые 
+		}
+	}
+}
+
+
+if(k==1){
+cout<<"da"<<endl;
+}
+
+else {
+cout<<"net"<<endl;
+}
+}

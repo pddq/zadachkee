@@ -1,0 +1,45 @@
+/*Дана строка символов. Найти слова, которые имеют четную длину и
+начинаются с заданного символа.*/
+
+
+#include <iostream>
+#include <string>
+using namespace std;
+int main() {
+
+int i, j, p, j1;
+i = j = j1 = p = 0;
+
+char s[40] = "dafukd dpop eifj b ebf bdfb";
+char s1[10] = "";
+cout<<s<<endl;
+char a; 
+cout<<"Задать символ: "; 
+cin>>a;
+
+
+while(s[i]!='\0'){
+	if(s[i]==a){
+		if(s[i-1]==' ' || i == 0){   
+			while(s[i]!=' '){
+				p++;
+				i++;
+			}
+			if(p%2==0){
+				j=i-p;
+				s1[1]='\0';
+				while(s[j]!=' '){
+					s1[j1]=s[j];				
+					j++;
+					j1++;
+				}
+				s1[j1]='\0';
+				cout<<s1<<endl;
+				j1=0;
+			}
+			p=0;
+		}
+	}
+i++;
+} 
+}

@@ -1,0 +1,58 @@
+/*Дан двухмерный массив целых чисел. В каждом его столбце найти:
+а) сумму нечетных элементов;
+б) количество положительных элементов;
+в) количество элементов, кратных a (a вводится с клавиатуры).*/
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+setlocale(LC_ALL, "Russian");
+
+int n, sum_odd, sum_pos, a, sum_a;
+
+sum_pos = 0;
+sum_a = 0;
+n = 4;
+
+int m[n][n] = {{0,2,-3, 4},{5,6,7, 6},{3,9,-4, -3}, {4,2,-3, 5}};
+int m_odd[n] = {};
+int m_pos[n] = {};
+int m_a[n] = {};
+
+cout << "a = ";
+cin>>a;
+
+for(int i = 0; i<n; i++){
+	for(int j = 0; j<n; j++){
+		
+		if(i%2!=0){
+			m_odd[j]=m_odd[j]+abs(m[i][j]);
+		}
+		if(m[i][j]>0){
+			m_pos[j] = m_pos[j]+1;
+		}
+		if(m[i][j]%a==0 && m[i][j]!=0){
+			m_a[j]++;
+		}
+		
+		if(j==n-1){
+			cout << m[i][j] <<endl; //красивенько показываю в виде матрицы
+		}
+		else {
+			cout << m[i][j] <<" ";
+		}
+	}
+
+}
+
+
+for(int i = 0; i<n; i++){
+	cout<<"  Столбец "<<i<<":"<<endl;
+	cout<<"сумма нечетных элементов: "<<m_odd[i]<<endl;
+	cout<<"количество положительных элементов: "<<m_pos[i]<<endl;
+	cout<<"количество элементов, кратных a: "<<m_a[i]<<endl;
+}
+
+}

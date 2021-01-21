@@ -1,0 +1,53 @@
+/*В двухмерном массиве найти номер первой по порядку строки, содержащей
+наибольшее число цифр.*/
+
+#include <iostream>
+using namespace std;
+
+int main() {
+setlocale(LC_ALL, "Russian");
+
+int n, l, s, sum, max, r;
+s=0;
+n=4;
+sum=0;
+
+
+int m[n][n] = {{99,9,8,7},{4,772,3,477},{9,2,3,4},{1,8,8,8}};
+int m1[n] = {};
+
+for(int i = 0; i<n; i++){
+	for(int j = 0; j<n; j++){
+		l=m[i][j];
+		while(l>0){
+			l=l/10;
+			s++;
+			
+		}
+		sum=sum+s;
+		s=0;
+		
+
+		if(j==n-1){
+			cout << m[i][j] <<endl;
+		}
+		else {
+			cout << m[i][j] <<" ";
+		}
+	}
+	
+	m1[i]=sum;
+	
+	sum=0;
+}
+max = m1[0];
+r=0;
+for (int i=0; i<n; i++){
+	if(m1[i]>max){
+		r=i;
+	}
+}
+
+cout<<"Строка: "<<r<<endl;
+
+}

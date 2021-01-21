@@ -1,0 +1,53 @@
+/*Найти координаты элемента, наиболее близкого к среднему значению всех
+элементов массива.*/
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+setlocale(LC_ALL, "Russian");
+
+int n, sum, min, a, x, y;
+sum = 0;
+n = 3;
+
+int m[n][n] = {{0,2,3},{5,6,7},{3,9,4}};
+int m1[n][n] = {};
+
+for(int i = 0; i<n; i++){
+	for(int j = 0; j<n; j++){
+		sum = sum + m[i][j]; //ищу сумму элементов
+		
+		if(j==n-1){
+			cout << m[i][j] <<endl; //красивенько показываю в виде матрицы
+		}
+		else {
+			cout << m[i][j] <<" ";
+		}
+	}
+
+}
+
+a = sum/(n*n); //среднее арифметическое
+
+for(int i = 0; i<n; i++){
+	for(int j = 0; j<n; j++){
+		m1[i][j]=abs(a-m[i][j]); //записываю в другой массив результат разности среднего числа и каждого элемента массива и убираю минусики
+	}
+}
+
+min = m1[0][0]; 
+
+for(int i = 0; i<n; i++){
+	for(int j = 0; j<n; j++){		
+		if(min>m1[i][j]){
+			min = m1[i][j];
+			x=i;
+			y=j;
+		}
+	}
+}
+cout <<"координаты: "<<x<<";"<<y<<endl;
+
+}

@@ -1,0 +1,26 @@
+//Даны натуральные A и B. Необходимо написать программу, вычисляющую частное и остаток при делении A на B, не используя DIV и MOD.
+
+#include <iostream>
+using namespace std;
+
+int main() {
+
+int x;
+float i, a, c, b;
+a=6;
+b=4;
+i=1;
+
+
+while (i<=a) {
+c = i * b;
+if(c==a){
+x=i;
+i=i*10;
+i=i-x*10;
+cout << x <<" chastnoe"<< endl;
+cout << i <<" ostatok"<< endl;
+break;}
+i=i+0.5;
+
+}}

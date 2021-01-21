@@ -1,0 +1,174 @@
+/*Дано действительное число a. Не пользуясь никакими
+арифметическими операциями, кроме умножения, получить:
+а) а4 за две операции;
+б) а6 за три операции;
+в) а7 за четыре операции;
+г) а8 за три операции;
+д) а9 за четыре операции;
+е) а10 за четыре операции;
+ж) а13 за пять операций;
+з) а15 за пять операций;
+и) а21 за шесть операций;
+к) а28 за шесть операций;
+л) а64 за шесть операций.
+*/
+
+б)
+
+#include <iostream>
+using namespace std;
+
+int main() {
+int a, b;
+a=a*a;
+b=a*a*a;
+
+cout<<b<<endl;
+}
+
+
+в)
+
+#include <iostream>
+using namespace std;
+
+int main() {
+int a, b,c;
+c=a;
+a=a*a;
+b=a*a*a*c;
+
+cout<<b<<endl;
+}
+
+г)
+
+#include <iostream>
+using namespace std;
+
+int main() {
+int a;
+a=a*a;
+a=a*a;
+a=a*a;
+
+cout<<a<<endl;
+}
+
+
+д)
+
+#include <iostream>
+using namespace std;
+
+int main() {
+int a, b;
+b=a;
+a=a*a;
+a=a*a;
+a=a*a;
+a=a*b;
+
+cout<<a<<endl;
+}
+
+
+е)
+
+#include <iostream>
+using namespace std;
+
+int main() {
+int a, b;
+a=a*a;
+b=a;
+a=a*a;
+a=a*a*b;
+
+cout<<a<<endl;
+}
+
+ж)
+#include <iostream>
+using namespace std;
+
+int main() {
+int a, b;
+b=a;
+a=a*a;
+a=a*a*a;
+a=a*a*b;
+cout<<a<<endl;
+}
+
+
+з)
+
+#include <iostream>
+using namespace std;
+
+int main() {
+int a, b;
+
+a=a*a*a;
+b=a;
+a=a*a;
+a=a*a*b;
+cout<<a<<endl;
+}
+
+
+и)
+
+#include <iostream>
+using namespace std;
+
+int main() {
+int a, b;
+
+a=a*a*a;
+b=a;
+a=a*a*a;
+a=a*a*b;
+cout<<a<<endl;
+}
+
+
+к)
+
+#include <iostream>
+using namespace std;
+
+int main() {
+int a, b;
+
+a=a*a;
+a=a*a;
+b=a;
+a=a*a*a;
+a=a*a*b;
+cout<<a<<endl;
+}
+
+л)
+
+#include <iostream>
+using namespace std;
+
+int main() {
+int a;
+
+a=a*a;
+a=a*a;
+a=a*a;
+a=a*a;
+a=a*a;
+a=a*a;
+cout<<a<<endl;
+}
+
+
+
+
+
+

@@ -1,0 +1,38 @@
+/*Заполнить двухмерный массив размером 9х9 результатами таблицы
+умножения.*/
+
+#include <iostream>
+using namespace std;
+
+int main() {
+int a, b, l, p;
+
+a=9;
+b=9;
+
+int m[a][b] = {};
+for(int i=0; i<a; i++){
+	l=i+1;
+	for(int j=0; j<b; j++){
+		p=j+1;
+		m[i][j]=p*l;
+	}
+}
+
+
+for(int i=0; i<a; i++){
+	for(int j=0; j<b; j++){
+		if(j==b-1){
+			cout<<m[i][j]<<endl;
+		}
+		else{
+			if(m[i][j]/10!=0){
+				cout<<m[i][j]<<"  ";
+			}
+			else{
+				cout<<m[i][j]<<"   ";
+			}
+		}
+	}
+}
+}

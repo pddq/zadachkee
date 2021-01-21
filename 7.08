@@ -1,0 +1,18 @@
+//Дано натуральное число N. Определить количество его нечетных делителей.
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main() {
+  int n, s;
+  cin >> n;
+  s=0;
+
+  for (int i = 2; i < n; i=i+2) {
+    if(n%i==0){
+      s=s+1;
+    }
+  }
+  cout<<s<<endl;
+}

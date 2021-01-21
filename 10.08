@@ -1,0 +1,29 @@
+/*Дана строка. Удалить из нее все пробелы./*
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+
+int i, j, p;
+i=j=0;
+string s = "jL AA C gA hj";
+
+cout<<"Строка: "<<s<<endl;
+
+while(s[i]!='\0'){
+	if(s[i]==' '){
+		p=i;
+		while(s[p]!='\0'){
+			s[p]=s[p+1];
+			p++;
+		}
+	}
+	else{
+		i++;
+	}
+}
+cout<<"Строка без пробелов: "<<s<<endl;
+
+}

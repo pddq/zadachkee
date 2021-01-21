@@ -1,0 +1,33 @@
+/*Заполнить двухмерный массив 3х3 с клавиатуры и распечатать его на экран
+в виде матрицы.*/
+
+#include <iostream>
+using namespace std;
+
+int main() {
+int a, b, l, p;
+
+a=3;
+b=3;
+
+int m[a][b] = {};
+for(int i=0; i<a; i++){
+	for(int j=0; j<b; j++){
+		cout<<"Vvedite znachenie "<<"m["<<i<<"]["<<j<<"]"<<endl;
+		cin>>p;
+		m[i][j]=p;
+	}
+}
+
+
+for(int i=0; i<a; i++){
+	for(int j=0; j<b; j++){
+		if(j==b-1){
+			cout<<m[i][j]<<endl;
+		}
+		else{
+			cout<<m[i][j]<<" ";
+		}
+	}
+}
+}

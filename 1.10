@@ -1,0 +1,13 @@
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+int main(){ 
+  int h = 10;
+  int osn= 12;
+  int r = 2;
+  int s_tr = (h*osn)/2;
+  float s_kr = r*r*M_PI;
+  float s_zashtrikh = s_tr - s_kr;
+  cout << s_zashtrikh <<endl;
+}

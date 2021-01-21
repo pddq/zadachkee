@@ -1,0 +1,26 @@
+/*С начала суток прошло п секунд. Определить:
+а) сколько полных часов прошло с начала суток;
+б) сколько полных минут прошло с начала очередного часа;
+в) сколько полных секунд прошло с начала очередной минуты.*/
+
+#include <iostream>
+using namespace std;
+
+int main() {
+  int n, sec, min, h, d, secund_v_minute, secund_v_chase;
+
+  n = 3664;
+
+  secund_v_minute = 60;
+  secund_v_chase = 3600;
+
+  h = n/secund_v_chase;
+  min = (n/secund_v_minute) - (n/secund_v_chase)*secund_v_minute;
+  sec = (n - h*secund_v_chase) - min*secund_v_minute;
+
+
+  cout<< h << " hour" <<endl;
+  cout<< min << " min" <<endl;
+  cout<< sec << " sec" <<endl;
+
+}

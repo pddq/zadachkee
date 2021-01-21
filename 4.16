@@ -1,0 +1,60 @@
+//Попадает ли точка M(x,y) в круг с центром O(Xc,Yc) и радиусом R.
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main() {
+
+  float Ox, Oy, R, Mx, My, RM;
+
+  cin >> Ox;
+  cin >> Oy;
+  cin >> R;
+  cin >> Mx;
+  cin >> My;
+
+
+  if (Mx < 0) {
+    Mx = 0 - Mx;
+  }
+
+
+  if (My < 0) {
+    My = 0 - My;
+  }
+
+
+  if (Ox < 0) {
+    Ox = 0 - Ox;
+    if (Ox != 0) {
+      Mx = Mx - Ox;
+      Ox = Ox - Ox;
+       if (Mx < 0) {
+         Mx = 0 - Mx;
+       }
+     }
+   }
+
+  if (Oy < 0) {
+    Oy = 0 - Oy;
+  if (Oy != 0) {
+    My = My - Oy;
+    Oy = Oy - Oy;
+    if (My < 0) {
+      My = 0 - My;
+    }
+   }
+  }
+ 
+  RM = sqrt(pow(My, 2) + pow(Mx, 2));
+
+  if (RM <= R) {
+    cout << "popadaet" << endl;
+  }
+
+  else {
+    cout << "ne popadaet" << endl;
+  }
+
+}

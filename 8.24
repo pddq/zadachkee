@@ -1,0 +1,35 @@
+/*Дан одномерный числовой массив. Среди его элементов могут быть группы
+нулей, расположенных подряд. Определите максимальную длину такой
+группы.*/
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main() {
+int k, index, n, max;
+max=0;
+n=0;
+k=8;
+
+int m[k] = {1, 0, 0, 1, 0, 0, 0, 0};
+
+for(int i=0; i<=k; i++){
+
+	if(m[i]==0){
+		n++;
+	}
+
+	else{
+		if(n>max){
+			max=n;
+			n=0;
+		}
+		else {
+			n=0;
+		}
+	}
+
+}
+cout<<max<<endl;
+}

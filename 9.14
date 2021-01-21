@@ -1,0 +1,48 @@
+/*В двухмерном массиве записаны целые числа. Верно ли, что сумма
+элементов побочной диагонали оканчивается цифрой 0.*/
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+setlocale(LC_ALL, "Russian");
+
+int n, k, sum_main_d, sum_side_d, q1, q2;
+
+n = 6;
+
+sum_side_d = 0;
+
+
+int m[n][n] = {{1,2,3,4,1,9},{5,6,7,8,3,4},{9,1,2,3,5,4},{5,6,9,1,2,4},{9,1,2,1,3,4},{5,6,9,1,2,4}};
+
+for(int i = 0; i<n; i++){
+	for(int j = 0; j<n; j++){
+	
+		
+		if(j==n-1-i){
+			sum_side_d=sum_side_d + m[i][j];
+			
+		}
+		if(j==n-1){
+			cout << m[i][j] <<endl;
+		}
+		else {
+			cout << m[i][j] <<" ";
+		}
+	}
+
+}
+
+
+cout<<"сумма элементов побочной диагонали: "<<sum_side_d<<endl;
+
+if(sum_side_d%10==0){
+cout<<"да"<<endl;
+}
+else{
+cout<<"нет"<<endl;
+}
+
+}

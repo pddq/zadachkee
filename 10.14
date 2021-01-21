@@ -1,0 +1,60 @@
+/*Дано предложение. Заменить в нем все вхождения подстроки Str1 на
+подстроку Str2.*/
+
+#include <iostream>
+#include <string>
+using namespace std;
+int main() {
+
+int i, j, l, k;
+i = j = l = k = 0;
+
+char s[40] = "pisa jopa nejopa";
+cout<<s<<endl;
+char str1[10] = "jopa";
+char str2[10] = "ochko";
+char str[40] = "";
+
+while(s[i]!='\0'){
+	if(s[i]==str1[j]){
+		j++;
+		if(str1[j]=='\0'){
+			j--;
+			l=i;
+			j=l-j;
+			
+			while(s[l]!='\0'){
+				l++;
+				str[k]=s[l];
+				k++;
+			}
+			
+			k=0;
+			l=0;
+			while(str2[l]!='\0'){
+				s[j]=str2[l];
+				j++;
+				l++;
+			}
+			
+			l=0;
+			while(str[l]!='\0'){
+				s[j]=str[l];
+				l++;
+				j++;
+			}
+			l=0;
+			j=0;
+		}
+	}
+	else{
+		j=0;
+	}	
+	
+	i++; 
+
+} 
+cout<<s<<endl;
+
+
+}

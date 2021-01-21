@@ -1,0 +1,27 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main() {
+
+  int x, y;
+
+  cin >> x;
+  cin >> y;
+
+  if (x < 0) {
+    x = 0 - x;
+  }
+
+  if (y < 0) {
+    y = 0 - y;
+  }
+
+  if (x < y) {
+    cout << x << " blizshe k nachalu koordinat" << endl;
+  }
+
+  else {
+    cout << y << " blizshe k nachalu koordinat" << endl;
+  }
+}

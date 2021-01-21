@@ -1,0 +1,81 @@
+/*Дана квадратная матрица целых чисел. Определите сумму и произведение
+ненулевых элементов, которые находятся:
+а) ниже главной диагонали;
+б) выше главной диагонали;
+в) ниже побочной диагонали;
+г) выше побочной диагонали.*/
+
+#include <iostream>
+using namespace std;
+
+int main() {
+setlocale(LC_ALL, "Russian");
+
+int n, k, sum_main_d_high, sum_main_d_low, prd_main_d_high, prd_main_d_low, prd_side_d_high, sum_side_d_high, sum_side_d_low, prd_side_d_low;
+
+n = 5;
+sum_main_d_high = 0; //сумма элементов выше главной диагонали
+sum_main_d_low = 0; //сумма элементов ниже главной диагонали
+prd_main_d_high = 1; //произведение элементов выше главной диагонали
+prd_main_d_low = 1; //произведение элементов ниже главной диагонали
+sum_side_d_high = 0; //сумма элементов выше побочной диагонали
+prd_side_d_high = 1; //произведение элементов выше побочной диагонали
+sum_side_d_low = 0; //сумма элементов ниже побочной диагонали
+prd_side_d_low = 1; //произведение элементов ниже побочной диагонали
+
+int m[n][n] = {};
+
+for(int i = 0; i<n; i++){
+	for(int j = 0; j<n; j++){
+		m[i][j] = rand()%10;
+
+		if(j>i && m[i][j]!=0){ 
+			sum_main_d_high = sum_main_d_high + m[i][j];
+			prd_main_d_high = prd_main_d_high * m[i][j];
+		}
+
+		if(j<i && m[i][j]!=0){ 
+			sum_main_d_low = sum_main_d_low + m[i][j];
+			prd_main_d_low = prd_main_d_low * m[i][j];
+		}
+
+		if(j<n-1-i && m[i][j]!=0){ 
+			sum_side_d_high = sum_side_d_high + m[i][j];
+			prd_side_d_high = prd_side_d_high * m[i][j];
+		}
+
+		if(j>n-1-i && m[i][j]!=0){ 
+			sum_side_d_low = sum_side_d_low + m[i][j];
+			prd_side_d_low = prd_side_d_low * m[i][j];
+		}
+
+		if(j==n-1){
+			cout << m[i][j] <<endl;
+		}
+		else {
+			cout << m[i][j] <<" ";
+		}
+	}
+
+}
+
+for(int i = 0; i<n; i++){
+	for(int j = 0; j<n; j++){
+		if(j>n-1-i){
+		cout << m[i][j] <<endl;
+		}
+	}
+
+}
+
+cout<<"Сумма элементов выше главной диагонали: "<<sum_main_d_high<<endl;
+cout<<"Произведение элементов выше главной диагонали: "<<prd_main_d_high<<endl;
+cout<<"Сумма элементов ниже главной диагонали: "<<sum_main_d_low<<endl;
+cout<<"Произведение элементов ниже главной диагонали: "<<prd_main_d_low<<endl;
+
+cout<<"Сумма элементов выше побочной диагонали: "<<sum_side_d_high<<endl;
+cout<<"Произведение элементов выше побочной диагонали: "<<prd_side_d_high<<endl;
+cout<<"Сумма элементов ниже побочной диагонали: "<<sum_side_d_low<<endl;
+cout<<"Произведение элементов ниже побочной диагонали: "<<prd_side_d_low<<endl;
+
+}

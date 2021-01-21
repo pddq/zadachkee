@@ -1,0 +1,24 @@
+/*В одномерном числовом массиве найти количество разных элементов.*/
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main() {
+int k, a, s;
+k=7;
+s=0;
+int m[k] = {40,41,50,48,67,67,76};
+
+for(int i=0; i<k; i++){
+for(int j=0; j<k; j++){
+
+if(i!=j){
+if(m[i]==m[j]){
+s=s+1;
+}}
+
+}}
+if(s!=0){s=k-s;
+cout<<s<<endl;}
+}

@@ -1,0 +1,21 @@
+/*Проверить, принадлежит ли число, введенное с клавиатуры, интервалу (–5,3).*/
+
+#include <iostream>
+using namespace std;
+
+int main() {
+
+  int x, a, b;
+  a=-5;
+  b=3;
+  cin >> x;
+
+
+  if (x <=b && x>=a) {
+   cout << "+" << endl;
+  }
+
+  else {
+   cout << "-" << endl;
+  }
+}

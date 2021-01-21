@@ -1,0 +1,7 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+ 
+int main(){
+  cout << ((4+sqrt(3)-2)/5)+(pow(8,2)+(4+sqrt(3)-2))/(4+sqrt(3)-2) <<endl;
+}

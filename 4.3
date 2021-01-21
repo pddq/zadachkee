@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+
+  int a, b;
+
+  cin >> a;
+
+  if (a%2 == 0) {
+    cout << a << " tshetnoe " << endl;
+  }
+  else {
+    cout << a << " netshetnoe " << endl;
+  }
+
+  b = a%10;
+
+  if (b==7) {
+    cout << a << " okanchivaetsya cifroi 7 " << endl;
+  }
+  else {
+    cout << a << " ne okanchivaetsya cifroi 7 " << endl;
+  }
+
+
+  if (b%2 == 0) {
+      cout << a << " okanchivaetsya tshetnoi tsifroi " << endl;
+  }
+  else {
+    cout << a << " okanchivaetsya netshetnoi tsifroi " << endl;
+  }
+
+}

@@ -1,0 +1,43 @@
+/*Дан текст. Найти максимальное из имеющихся в нем чисел.*/
+
+#include <iostream>
+#include <string>
+using namespace std;
+int main() {
+
+int i, j, num, k, max;
+i = j = max = num = 0;
+int m[12] = {};
+string s = "3 46 dl5op 56 yu 67";
+cout<<s<<endl;
+
+char n1 = '0';
+char n2 = '9';
+
+while(s[i]!='\0'){
+	if((int)s[i]>(int)n1-1 && (int)s[i]<=(int)n2){ //ищу циферки в строке
+		k=(int)s[i]-(int)n1; //превращаю в циферку
+		num=num*10+k; 
+		m[j]=num;
+		
+	}
+	else {
+		if(num!=0){  
+			j++;
+		}
+		num=0;
+	}
+	i++; 
+} 
+
+max=m[0];
+for(int l = 0; l<=j; l++){
+	if(m[l]>max){
+		max=m[l];
+	}
+	cout<<m[l]<<endl;
+}
+
+cout<<"Максимальное число: "<<max<<endl;
+
+}

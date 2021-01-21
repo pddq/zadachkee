@@ -1,0 +1,41 @@
+/*Дан одномерный числовой массив. Определить первое простое число,
+содержащее четное число цифр 1.*/
+
+#include <iostream>
+using namespace std;
+
+int main() {
+int k, s, a, b, jj, s1;
+k=6;
+s=0;
+s1=0;
+int m[k] = {1, 131, 61, 13, 8, 8};
+
+for(int i = 0; i<=k-1; i++){
+	s=0;
+	for (int j = 1; j <= m[i]; j++) {  
+			if(m[i]%j==0){
+				s=s+1;
+			}
+	}
+
+	if(s==2){
+		jj=0;
+		a=m[i];
+		s1=0;
+		while(a>0){
+			if(a%10==1){
+				s1=s1+1;
+			}
+			a=a/10;
+			jj++;
+		}
+
+		if(s1%2==0){
+			b=m[i];
+			break;
+		}
+	}
+}
+cout<<b<<endl;
+}

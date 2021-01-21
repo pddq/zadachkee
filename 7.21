@@ -1,0 +1,25 @@
+//Найти количество цифр 5 в десятичной записи числа N.
+
+#include <iostream>
+using namespace std;
+
+int main() {
+
+
+int n, a, i, s;
+
+n=3545;
+i=1;
+s=0;
+
+while(n>0) {
+i=i+1;
+a=n%10;
+n=n/10;
+	if(a==5){
+	s=s+1;
+	}
+}
+cout << s << " tsifer 5" << endl;
+
+}

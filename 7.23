@@ -1,0 +1,31 @@
+//Дано натуральное число N. Определить его максимальную и минимальную цифры.
+
+#include <iostream>
+using namespace std;
+
+int main() {
+
+int n, a, i, b, max, min;
+
+n=12304;
+i=1;
+a=n%10;
+max=min=a;
+n=n/10;
+
+while(n>0) {
+a=n%10;
+	if(a>=max){
+	max=a;
+	}
+
+	if(a<=min){
+	min=a;
+	}
+n=n/10;
+i++;
+}
+
+cout << "max: "<< max<< endl;
+cout << "min: "<< min<< endl;
+}

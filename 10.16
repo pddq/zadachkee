@@ -1,0 +1,38 @@
+/*Дан текст, в котором имеются цифры. Найти их сумму. Найти
+максимальную цифру.*/
+
+#include <iostream>
+#include <string>
+using namespace std;
+int main() {
+
+int i, j, sum, k, max;
+i = sum = j = max = 0;
+int m[12] = {};
+string s = "02439 dlop";
+cout<<s<<endl;
+
+char n1 = '0';
+char n2 = '9';
+
+while(s[i]!='\0'){
+	if((int)s[i]>(int)n1-1 && (int)s[i]<=(int)n2){
+		k=(int)s[i]-(int)n1;
+		sum=sum+k;
+		m[j]=k;
+		j++;
+	}
+	i++; 
+} 
+cout<<"Сумма цифр в тексте: "<<sum<<endl;
+
+max=m[0];
+for(int l = 0; l<j; l++){
+	if(m[l]>max){
+		max=m[l];
+	}
+}
+
+cout<<"Максимальная цифра: "<<max<<endl;
+
+}

@@ -1,0 +1,27 @@
+//Определить, является ли натуральное число N степенью двойки.
+
+#include <iostream>
+using namespace std;
+
+int main() {
+
+
+float N;
+N=16;
+
+
+while(N>1){
+
+N=N/2;
+if(N<=1){
+if(N==1){
+cout << "da" << endl;
+}
+else {
+cout << "net" << endl;
+}
+}
+}
+
+
+}

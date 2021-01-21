@@ -1,0 +1,43 @@
+/*Дано натуральное число, в котором все цифры различны. Определить
+порядковый номер его максимальной цифры, считая номера: а) от конца
+числа; б) от начала числа.*/
+
+#include <iostream>
+using namespace std;
+
+int main() {
+
+int n, a, i, max, j, ii, jj, N;
+
+n=1256;
+N=n;
+i=1;
+j=i;
+a=n%10;
+max=a;
+n=n/10;
+ii=1;
+
+while (N>0){
+N=N/10;
+if(N<=0){break;}
+ii=ii+1;
+}	
+jj=ii;
+
+while(n>0) {
+a=n%10;
+i=i+1;
+ii=ii-1;
+
+if(a>=max){
+max=a;	
+j=i;
+jj=ii;
+}
+
+n=n/10;
+
+}
+cout << "max: "<< max<< " poryadkovij nomer ot kontsa: " << j << " poryadkovij nomer ot nachala: " << jj<<endl;
+}

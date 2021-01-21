@@ -1,0 +1,30 @@
+/*Даны четыре целых числа. Определить сумму тех из них, которые кратны трем.*/
+
+#include <iostream>
+using namespace std;
+
+int main() {
+
+  int a, b, c, d, sum;
+
+  cin >> a;
+  cin >> b;
+  cin >> c;
+  cin >> d;
+  sum = 0;
+
+  if (a%3==0) {
+    sum = sum + a;
+  }
+  if (b%3==0) {
+    sum = sum + b;
+  }
+  if (c%3==0) {
+    sum = sum + c;
+  }
+   if (d%3==0) {
+    sum = sum + d;
+  }
+
+  cout << sum << endl;
+}

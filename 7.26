@@ -1,0 +1,38 @@
+/*Дано натуральное число. Установить, является ли последовательность его
+цифр при просмотре их слева на право упорядоченной по возрастанию.*/
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main() {
+
+int n, m, l, s, i, ss;
+n=1247;
+i=1;
+ss=0;
+s=0;
+
+while(n>0){
+m=n%10;
+
+if(i==1){l=m;}
+
+if(i>1){
+	if(l>m){
+	l=m;
+	s=0;}
+	else {l=m; s=1;}
+}
+
+ss=ss+s;
+n=n/10;
+i++;
+}
+
+if(ss==0){
+cout<<"da"<<endl;}
+else{
+cout<<"net"<<endl;}
+
+}

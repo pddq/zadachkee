@@ -1,0 +1,24 @@
+/*Дан одномерный массив М из N элементов. Перенесите первые k элементов
+в конец.*/
+
+#include <iostream>
+using namespace std;
+
+int main() {
+int k, N, j;
+N=6;
+k=3;
+j=0;
+int m[N+k] = {40,41,50,42,67,65};
+int m1[k] = {};
+
+for(int i=N; i<N+k; i++){
+m[i]=m[j];
+j++;
+}
+
+for(int i=0; i<N+k; i++){
+cout<<m[i]<<endl;
+}
+
+}

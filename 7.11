@@ -1,0 +1,15 @@
+//Вычислить значение функции y=4x 3 -2x 2 +5 для значений x, изменяющихся от -3 до 1 с шагом 0,1.
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main() {
+  int y;
+
+  for(float i = -3; i<=1; i=i+0.1){
+  	y = 4*pow(i,3)-2*pow(i,2)+5;
+	  cout << y <<endl;
+  }
+}
+

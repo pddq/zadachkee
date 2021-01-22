@@ -1,0 +1,27 @@
+*/Дан текст. Найти сумму всех имеющихся в нем чисел.*/
+
+#include <iostream>
+using namespace std;
+int main() {
+	int i, j, sum, b, num;
+	i=j=0;
+	string s = "T rofj 3 4 45 efed43";
+	char n1 = '0';
+	char n2 = '9';
+	sum=num=0;
+
+	while(s[i]!='\0'){  
+		while((int)s[i]>=(int)n1 && (int)s[i]<=(int)n2){
+			b=(int)s[i]-(int)n1;
+			num=num*10+b;
+			i++;
+		}
+		if(num!=0){
+			sum=sum+num;
+			j++;
+			num=0;
+		}
+	i++;
+	}
+	printf("Сумма: %d\n",sum);
+}

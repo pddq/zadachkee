@@ -1,0 +1,30 @@
+/*Дана последовательность символов (строка). Упорядочить все символы в
+порядке неубывания. Малые и большие буквы алфавита считаются
+разными.*/
+
+#include <iostream>
+
+using namespace std;
+int main() {
+	int i, j, isChange, isSorted;
+	i = j = isChange = isSorted = 0;
+	string s = "TrofjBhsgfheHfeAd";
+	char ch;
+	while(isSorted==0){  
+		while(s[i]!='\0'){
+			if((int)s[i]<(int)s[i+1]){
+				ch = s[i];
+				s[i] = s[i+1];
+				s[i+1] = ch;
+				isChange = 1;
+			}
+			i++;
+		}
+		if(isChange == 0){
+			isSorted = 1;
+		}
+		isChange = 0;
+		i=0;
+	}
+	cout<<s<<endl;
+}

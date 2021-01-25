@@ -8,90 +8,98 @@
 #include <iostream>
 using namespace std;
 int main() {
-	int i, j, l, d, h, max, min, n_min, n_max;
-	i = j = l = d = h = 0;
-	int a [40] = {};
+	int i, j, l, amount, c, max, min, short_w_index, long_w_index, sum, n_one, n_zero, short_w_sum, long_w_sum;
+	i = j = amount = c = sum = 0;
+	int amount_of_char [40] = {};
+	int sum_of_num_in_word [40] = {};
 	char s [40] = "  100 101010  11 1010 010 ";
-	char s1 [10] = {};
-	char s2 [10] = {};
-	 
-	while(h==0){
-		if(s[i]!=' '){
-			l++;	
+	char s1 [40] = {};
+	char s2 [40] = {};
+	n_zero = '0';
+
+	printf("Дана строка: %s\n", s);
+
+	while(s[i] != '\0'){
+		if(s[i] != ' '){
+			sum = sum + ((int)s[i] - (int)n_zero);
+			amount++;	
 			i++;
 		}
-		if(s[i]=='\0' || s[i]==' ') {
-			while(s[i]==' '){
+		
+		if(s[i] == '\0' || s[i] == ' ') {
+			while(s[i] == ' '){
 				i++;
 			}
-			if(l!=0){
-				a[j]=l;
+			if(amount != 0){
+				amount_of_char[j] = amount;
+				sum_of_num_in_word[j] = sum;
 				j++;
 			}
-			l=0;
-			if(s[i]=='\0'){
-				h=1;
-			}
+			amount = 0;
+			sum = 0;
 		}
 	}
 
-	i=0;
-	n_min=0;
-	n_max=0;
-	max=a[0];
-	min=a[0];
+	i = 0;
+	short_w_index = 0;
+	long_w_index = 0;
+	max = amount_of_char[long_w_index];
+	min = amount_of_char[short_w_index];
 
 	while(i<j){
-		if(a[i]>max){
-			max=a[i];
-			n_max=i;
+		if(amount_of_char[i] > max){
+			max = amount_of_char[i];
+			long_w_index = i;
+			long_w_sum = sum_of_num_in_word[i];
 		}
-		if(a[i]<min){
-			min=a[i];
-			n_min=i;
+		if(amount_of_char[i] < min){
+			min = amount_of_char[i];
+			short_w_index = i;
+			short_w_sum = sum_of_num_in_word[i];
 		}
 		i++;
 	}
-	n_max++;
-	n_min++;
+	long_w_index++;
+	short_w_index++;
 	
-	i=0;
-	j=0;
-	l=0;
-	d=1;
-	h=0;
+	i = 0;
+	j = 0;
+	l = 0;
+	c = 1;
+	
 		
-	while(s[i]!='\0'){
-		if(i==0 && s[i]==' '){
-			while(s[i]==' '){
+	while(s[i] != '\0'){
+		if(i == 0 && s[i] == ' '){
+			while(s[i] == ' '){
 				i++;
 			}
 		}
-		if(s[i]!=' ' && d==n_max){
-			s1[j]=s[i];
+		if(s[i] != ' ' && c == long_w_index){
+			s1[j] = s[i];
 			i++;	
 			j++;
 		}
-		if(s[i]!=' ' && d==n_min){
-			s2[l]=s[i];
+		if(s[i] != ' ' && c == short_w_index){
+			s2[l] = s[i];
 			i++;	
 			l++;
 		}
 		
-		if(s[i]==' '){
-			while(s[i]==' '){
+		if(s[i] == ' '){
+			while(s[i] == ' '){
 				i++; 
 			}
-			d++;
+			c++;
 		}
-		if(s[i]!=' ' && d!=n_min && d!=n_max){
+		if(s[i] != ' ' && c != short_w_index && c != long_w_index){
 			i++;		
-		}	
+		}
 	}
 
-
 printf("Самое длинное слово: %s\n", s1);
+printf("Сумма чисел: %d\n", long_w_sum);
 printf("Самое короткое слово: %s\n", s2);
+printf("Сумма чисел: %d\n", short_w_sum);
 
 }
 

@@ -1,0 +1,50 @@
+#include <iostream>
+using namespace std;
+
+
+struct garemKR 
+{
+	wstring name = {};
+	int height;
+	int age;
+};
+
+void showData(garemKR Obj[], int kk);
+
+int main()
+{
+	const int k = 5;
+	locale::global(locale(""));
+	garemKR mujiki[k] = {};
+
+	mujiki[0].name = L"Сэм";
+	mujiki[0].age = 24;
+	mujiki[0].height = 178;
+	mujiki[1].name = L"Брэндон";
+	mujiki[1].age = 24;
+	mujiki[1].height = 183;
+	mujiki[2].name = L"Дэвид";
+	mujiki[2].age = 29;
+	mujiki[2].height = 182;
+	mujiki[3].name = L"Аарон";
+	mujiki[3].age = 25;
+	mujiki[3].height = 180;
+	mujiki[4].name = L"Люцифер";
+	mujiki[4].age = 27;
+	mujiki[4].height = 185;
+	
+	showData(mujiki, k);
+	
+}
+
+void showData(garemKR Obj[], int kk) {
+	wcout<<"№\t"<<L"Имя \t"<<L"Возраст \t"<<L"Рост"<<endl;
+	wcout<<"====================================="<<endl;
+	for(int i = 0; i<kk; i++){
+		wcout<<i+1<<"\t"<<Obj[i].name<<"\t\t"<<Obj[i].age<<"\t"<<Obj[i].height<<endl;
+	}
+}
+
+
+
+	
